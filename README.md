@@ -6,4 +6,30 @@ Enjoy! :)
 
 ## Commands
 
-Update later
+### [-h] - Help Menu
+
+Bring up a menu that lists all of the commands
+
+### [-s] - Set Source
+
+Sets the following argument to the directory where the files will be retrieved from
+
+### [-d] - Set Destination
+
+Sets the following argument to the directory where the files listed in the source directory will be stored
+
+### [-u] - Set User
+
+The following argument sets the username that will be used to access the server
+
+NOTE: This argument must either be specified or changed inside of the script.
+
+### [-r] - Grab Multiple Files or Directories
+
+Grabs each file and subdirectory listed within the directory provided in source
+
+### [-o] - Optional Server
+
+Sets the optional server to be accessed something different than the default
+
+Default is currently 'access'
