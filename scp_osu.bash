@@ -70,15 +70,15 @@ then
 	exit 1
 fi
 
-if [ $DES -eq 0 ] && [ $SRC -eq 0 ]
+if [ "$DES" = "$ZERO" ] && [ "$SRC" = "$ZERO" ]
 then
 	echo "Invalid destination and source"
 	exit 1
-elif [ $DES -eq 0 ]
+elif [ "$DES" = "$ZERO" ]
 then
 	echo "Invalid destination"
 	exit 1
-elif [ $SRC -eq 0 ]
+elif [ "$SRC" = "$ZERO" ]
 then
 	echo "Invalid source"
 	exit 1
