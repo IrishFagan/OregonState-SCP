@@ -6,6 +6,7 @@ OPTION=0
 HELP=0
 RECURSE=0
 USER=0
+ZERO=0
 
 show_help()
 {
@@ -62,7 +63,7 @@ then
 	show_help
 fi
 
-if [ $USER -eq 0 ]
+if [ "$USER" = "$ZERO" ]
 then
 	echo "Invalid user."
 	echo "Please specify a user or edit the USER variable manually"
@@ -78,6 +79,7 @@ then
 	echo "Invalid destination"
 	exit 1
 elif [ $SRC -eq 0 ]
+then
 	echo "Invalid source"
 	exit 1
 fi
