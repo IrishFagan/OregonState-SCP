@@ -83,3 +83,24 @@ then
 	echo "Invalid source"
 	exit 1
 fi
+
+if [ $RECURSE -eq 1 ] && [ "$OPTION" != "$ZERO" ]
+then
+	echo "./scp_osu.bash -s ~/${SRC} -d ${DES} -u ${USER} -o ${OPTION} -r"
+	scp -r $USER@$OPTION.engr.oregonstate.edu:"~/"$SRC $DES
+	exit 0
+elif [ $RECURSE -eq 1 ]
+then
+	echo "./scp_osu.bash -s ~/${SRC} -d ${DES} -u ${USER} -r"
+	scp -r $USER@access.engr.oregonstate.edu:"~/"$SRC $DES
+	exit 0
+elif [ "$OPTION" != "$ZERO" ]
+then
+	echo "./scp_osu.bash -s ~/${SRC} -d ${DES} -u ${USER} -o ${OPTION}"
+	scp $USER@$OPTION.engr.oregonstate.edu:"~/"$SRC $DES
+	exit 0
+else
+	echo "./scp_osu.bash -s ~/${SRC} -d ${DES} -u ${USER}"
+	scp $USER@access.engr.oregonstate.edu:"~/"$SRC $DES
+	exit 0
+fi
