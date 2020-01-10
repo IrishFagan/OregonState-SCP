@@ -22,7 +22,7 @@ Sets the following argument to the directory where the files listed in the sourc
 
 The following argument sets the username that will be used to access the server
 
-NOTE: This argument must either be specified or changed inside of the script.
+**NOTE:** This argument must either be specified or changed inside of the script.
 
 ### [-r] - Grab Multiple Files or Directories
 
@@ -33,3 +33,12 @@ Grabs each file and subdirectory listed within the directory provided in source
 Sets the optional server to be accessed something different than the default
 
 Default is currently 'access'
+
+## Notes
+
+### [-s] + [-d] Functionality
+
+When accessing a directory on an OSU server, the user must assume that a `~/` has already been placed in front of either the `-s` or `-d` command.
+The shell already expands the `~` character on execution. Therefore, when the user inputs a `~` when trying to access a directory on a server, it won't be able to find it
+
+Proper Use: directory/sub/desiredfile.txt
