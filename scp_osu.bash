@@ -2,7 +2,7 @@
 
 DES=0
 SRC=0
-OPTION=0
+OPTION=access
 HELP=0
 RECURSE=0
 USER=0
@@ -88,7 +88,7 @@ then
 	exit 1
 fi
 
-if [ $RECURSE -eq 1 ] && [ "$OPTION" != "$ZERO" ]
+if [ $RECURSE -eq 1 ] && [ "$OPTION" != "access" ]
 then
 	echo "./scp_osu.bash -s ~/${SRC} -d ${DES} -u ${USER} -o ${OPTION} -r"
 	scp -r $USER@$OPTION.engr.oregonstate.edu:"~/"$SRC $DES
@@ -98,13 +98,13 @@ then
 	echo "./scp_osu.bash -s ~/${SRC} -d ${DES} -u ${USER} -r"
 	scp -r $USER@access.engr.oregonstate.edu:"~/"$SRC $DES
 	exit 0
-elif [ "$OPTION" != "$ZERO" ]
+elif [ "$OPTION" != "access" ]
 then
 	echo "./scp_osu.bash -s ~/${SRC} -d ${DES} -u ${USER} -o ${OPTION}"
 	scp $USER@$OPTION.engr.oregonstate.edu:"~/"$SRC $DES
 	exit 0
 else
-	echo "./scp_osu.bash -s ~/${SRC} -d ${DES} -u ${USER}"
+	echo "./scp_osu.bash -s ~/${SRC} -d ${DES} -u ${USER} -o ${OPTION}"
 	scp $USER@access.engr.oregonstate.edu:"~/"$SRC $DES
 	exit 0
 fi
