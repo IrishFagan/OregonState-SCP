@@ -52,3 +52,16 @@ if [ $HELP=1 ]
 then
 	show_help
 fi
+
+if [ $DES=0 ] && [ $SRC=0 ]
+then
+	echo "Invalid destination and source"
+	exit 1
+elif [ $DES=0 ]
+then
+	echo "Invalid destination"
+	exit 1
+elif [ $SRC=0 ]
+	echo "Invalid source"
+	exit 1
+fi
