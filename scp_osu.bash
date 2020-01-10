@@ -30,11 +30,12 @@ show_help()
 	echo "       "
 	echo "       -->WARNING: Unfortunately the shell expands the '~' character automatically so"
 	echo "                   when entering a source the user should assume that the directory"
-	echo "                   they enter already has a '~/' entered beforehand"
+	echo "                   they enter already has a '~/' entered beforehand."
+	echo "                   Ex: -s dog/cat/catfile.exe"
 	echo "	"
 	echo "[-u] - Set user"
 	echo "       Ex: washingtong"
-	echo "       NOTE: -u must be specified or the USER variable must be changed"
+	echo "       NOTE: -u must be specified or the USER variable must be changed manually"
 	exit 0
 }
 
