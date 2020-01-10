@@ -36,9 +36,10 @@ Default is currently `access`
 
 ## Notes
 
-### [-s] + [-d] Functionality
+### `-s` and `-d` Functionality
 
 When accessing a directory on an OSU server, the user must assume that a `~/` has already been placed in front of either the `-s` or `-d` command.
 The shell already expands the `~` character on execution. Therefore, when the user inputs a `~` when trying to access a directory on a server, it won't be able to find it
 
-Proper Use: `directory/sub/desiredfile.txt`
+Input: `directory/sub/desiredfile.txt`
+Actual: `~/directory/sub/desiredfile.txt
