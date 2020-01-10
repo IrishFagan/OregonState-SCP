@@ -4,6 +4,7 @@ DES=0
 SRC=0
 OPTION=0
 HELP=0
+RECURSE=0
 
 show_help()
 {
@@ -40,6 +41,9 @@ do
 			;;
 		o)
 			OPTION="${OPTARG}"
+			;;
+		r)
+			RECURSE=1
 			;;
 	esac
 done
