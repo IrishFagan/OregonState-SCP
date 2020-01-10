@@ -57,20 +57,27 @@ do
 	esac
 done
 
-if [ $HELP=1 ]
+if [ $HELP -eq 1 ]
 then
 	show_help
 fi
 
-if [ $DES=0 ] && [ $SRC=0 ]
+if [ $USER -eq 0 ]
+then
+	echo "Invalid user."
+	echo "Please specify a user or edit the USER variable manually"
+	exit 1
+fi
+
+if [ $DES -eq 0 ] && [ $SRC -eq 0 ]
 then
 	echo "Invalid destination and source"
 	exit 1
-elif [ $DES=0 ]
+elif [ $DES -eq 0 ]
 then
 	echo "Invalid destination"
 	exit 1
-elif [ $SRC=0 ]
+elif [ $SRC -eq 0 ]
 	echo "Invalid source"
 	exit 1
 fi
